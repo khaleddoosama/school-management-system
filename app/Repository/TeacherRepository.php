@@ -13,7 +13,7 @@ class TeacherRepository implements TeacherRepositoryInterface
 
     public function getAllTeachers()
     {
-        return Teacher::all();
+        return Teacher::get();
     }
 
     public function Getspecialization()

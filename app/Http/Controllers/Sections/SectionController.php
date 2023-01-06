@@ -31,7 +31,7 @@ class SectionController extends Controller
     public function store(StoreSections $request)
     {
         try {
-
+            return $request;
             $validated = $request->validated();
             $Sections = new Section();
 
