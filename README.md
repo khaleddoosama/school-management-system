@@ -13,6 +13,8 @@ http://school-manage-d1fd337d5df2.herokuapp.com/
     -   [Prerequisites](#prerequisites)
     -   [Installation](#installation)
 -   [Usage](#usage)
+    -   [Admin User (Sidebar Navigation)](#admin-user-sidebar-navigation)
+    -   [Parent, Teacher, and Student Dashboards](#parent-teacher-and-student-dashboards)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -123,7 +125,7 @@ Before you begin, ensure you have the following prerequisites:
     git clone https://github.com/khaleddoosama/school-management-system.git
     ```
 
-````
+
 
 2. Navigate to the project directory:
 
