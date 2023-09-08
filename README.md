@@ -1,6 +1,7 @@
 # School Management System
 
 ![School Logo](http://school-manage-d1fd337d5df2.herokuapp.com/assets/images/student.png)
+
 http://school-manage-d1fd337d5df2.herokuapp.com/
 
 ## Table of Contents
