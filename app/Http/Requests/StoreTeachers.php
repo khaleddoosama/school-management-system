@@ -23,7 +23,9 @@ class StoreTeachers extends FormRequest
             'Specialization_id' => 'required',
             'Gender_id' => 'required',
             'Joining_Date' => 'required|date|date_format:Y-m-d',
-            'Address' => 'required',
+            'Address' => 'required', 
+            
+
         ];
     }
 

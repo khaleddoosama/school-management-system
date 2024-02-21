@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-        use \Mcamara\LaravelLocalization\Traits\LoadsTranslatedCachedRoutes;
+    use \Mcamara\LaravelLocalization\Traits\LoadsTranslatedCachedRoutes;
 
     /**
      * The path to the "dashboard" route for your application.
@@ -42,20 +42,20 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/student.php'));
+                ->namespace($this->namespace)
+                ->group(base_path('routes/student.php'));
 
             Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/teacher.php'));
+                ->namespace($this->namespace)
+                ->group(base_path('routes/teacher.php'));
 
             Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/ajax.php'));
+                ->namespace($this->namespace)
+                ->group(base_path('routes/ajax.php'));
 
             Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/parent.php'));
+                ->namespace($this->namespace)
+                ->group(base_path('routes/parent.php'));
         });
     }
 

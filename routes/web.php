@@ -27,15 +27,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
     Route::post('/login', 'LoginController@login')->name('login');
 
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
-
 });
 
- //==============================Translate all pages============================
-    Route::group(
+//==============================Translate all pages============================
+Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
-    ], function() {
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
+    ],
+    function () {
         //==============================dashboard============================
         //Route::get('/', 'App\Http\Controllers\HomeController@index')->name('dashboard');
         Route::get('/dashboard', 'App\Http\Controllers\HomeController@dashboard')->name('dashboard');
@@ -49,10 +49,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
         Route::group(['namespace' => 'App\Http\Controllers\Classrooms'], function () {
             Route::resource('Classrooms', 'ClassroomController');
 
-            Route::post('delete_all' ,'ClassroomController@delete_all') ->name('delete_all');
+            Route::post('delete_all', 'ClassroomController@delete_all')->name('delete_all');
 
-            Route::post('Filter_Classes' ,'ClassroomController@Filter_Classes') ->name('Filter_Classes');
-
+            Route::post('Filter_Classes', 'ClassroomController@Filter_Classes')->name('Filter_Classes');
         });
 
         //==============================Sections============================
@@ -71,7 +70,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
         Route::group(['namespace' => 'App\Http\Controllers\Teachers'], function () {
 
             Route::resource('Teachers', 'TeacherController');
-
         });
         //==============================Students============================
         Route::group(['namespace' => 'App\Http\Controllers\Students'], function () {
@@ -116,5 +114,42 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
 
         //==============================Setting============================
         Route::resource('settings', 'App\Http\Controllers\SettingController');
+    }
+);
 
-    });
+// ===============================etqan_visitors ===============================
+// get visitors count
+Route::get('/etqan_visitors', function () {
+    try {
+        $visitor = \App\Models\EtqanVisitor::first();
+        $data = [
+            'message' => 'success',
+            'count' => $visitor->count,
+        ];
+        return response()->json($data, 200);
+    } catch (\Exception $ex) {
+        $data = [
+            'message' => $ex->getMessage(),
+        ];
+        return response()->json($data, 500);
+    }
+});
+
+// increament visitors count
+Route::get('/etqan_visitors/increment', function () {
+    try {
+        $visitor = \App\Models\EtqanVisitor::first();
+        $visitor->count = $visitor->count + 1;
+        $visitor->save();
+        $data = [
+            'message' => 'success',
+            'count' => $visitor->count,
+        ];
+        return response()->json($data, 200);
+    } catch (\Exception $ex) {
+        $data = [
+            'message' => $ex->getMessage(),
+        ];
+        return response()->json($data, 500);
+    }
+});
