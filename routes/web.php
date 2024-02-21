@@ -117,39 +117,3 @@ Route::group(
     }
 );
 
-// ===============================etqan_visitors ===============================
-// get visitors count
-Route::get('/etqan_visitors', function () {
-    try {
-        $visitor = \App\Models\EtqanVisitor::first();
-        $data = [
-            'message' => 'success',
-            'count' => $visitor->count,
-        ];
-        return response()->json($data, 200);
-    } catch (\Exception $ex) {
-        $data = [
-            'message' => $ex->getMessage(),
-        ];
-        return response()->json($data, 500);
-    }
-});
-
-// increament visitors count
-Route::get('/etqan_visitors/increment', function () {
-    try {
-        $visitor = \App\Models\EtqanVisitor::first();
-        $visitor->count = $visitor->count + 1;
-        $visitor->save();
-        $data = [
-            'message' => 'success',
-            'count' => $visitor->count,
-        ];
-        return response()->json($data, 200);
-    } catch (\Exception $ex) {
-        $data = [
-            'message' => $ex->getMessage(),
-        ];
-        return response()->json($data, 500);
-    }
-});
