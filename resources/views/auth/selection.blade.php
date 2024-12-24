@@ -39,22 +39,22 @@
                                 <a class="btn btn-default col-lg-3" title="طالب"
                                     href="{{ route('login.show', 'student') }}">
                                     <img alt="user-img" width="100px;"
-                                        src="{{ URL::asset('assets/images/student.png') }}">
+                                        src="{{ asset('assets/images/student.png') }}">
                                 </a>
                                 <a class="btn btn-default col-lg-3" title="ولي امر"
                                     href="{{ route('login.show', 'parent') }}">
                                     <img alt="user-img" width="100px;"
-                                        src="{{ URL::asset('assets/images/parent.png') }}">
+                                        src="{{ asset('assets/images/parent.png') }}">
                                 </a>
                                 <a class="btn btn-default col-lg-3" title="معلم"
                                     href="{{ route('login.show', 'teacher') }}">
                                     <img alt="user-img" width="100px;"
-                                        src="{{ URL::asset('assets/images/teacher.png') }}">
+                                        src="{{ asset('assets/images/teacher.png') }}">
                                 </a>
                                 <a class="btn btn-default col-lg-3" title="ادمن"
                                     href="{{ route('login.show', 'admin') }}">
                                     <img alt="user-img" width="100px;"
-                                        src="{{ URL::asset('assets/images/admin.png') }}">
+                                        src="{{ asset('assets/images/admin.png') }}">
                                 </a>
                             </div>
 
@@ -69,9 +69,9 @@
 
     </div>
     <!-- jquery -->
-    <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
     <!-- plugins-jquery -->
-    <script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins-jquery.js') }}"></script>
     <!-- plugin_path -->
     <script>
         var plugin_path = 'js/';
@@ -81,7 +81,7 @@
     <!-- toastr -->
     @yield('js')
     <!-- custom -->
-    <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
 
 </body>
 
