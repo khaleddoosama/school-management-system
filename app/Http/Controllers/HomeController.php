@@ -10,7 +10,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        Log::info('X-Forwarded-Proto: ' . request()->header('x-forwarded-proto'));
+        Log::info('X-Forwarded-Proto1: ' . request()->header('x-forwarded-proto'));
 
         return view('auth.selection');
     }
