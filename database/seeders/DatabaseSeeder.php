@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
 
 
-        DB::table('grades')->delete();
+        Grade::truncate(); 
         Grade::create([
             'Name' => ['en' => "Primary Stage", 'ar' => "المرحله الابتدائيه"],
             'Notes' => '',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        DB::table('classrooms')->delete();
+        Classroom::truncate(); 
         Classroom::create([
             'Name_Class' => ['en' => "first level", 'ar' => "الصف الاول"],
             'Grade_id' => '1',
