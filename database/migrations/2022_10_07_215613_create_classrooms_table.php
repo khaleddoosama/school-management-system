@@ -20,4 +20,4 @@ class CreateClassroomsTable extends Migration {
 	{
 		Schema::drop('Classrooms');
 	}
-}
+};
