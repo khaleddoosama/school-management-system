@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign('blood_id')->references('id')->on('type__bloods')->onDelete('cascade');
             $table->date('Date_Birth');
             $table->bigInteger('Grade_id')->unsigned();
-            $table->foreign('Grade_id')->references('id')->on('Grades')->onDelete('cascade');
+            $table->foreign('Grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->bigInteger('Classroom_id')->unsigned();
             $table->foreign('Classroom_id')->references('id')->on('Classrooms')->onDelete('cascade');
             $table->bigInteger('section_id')->unsigned();

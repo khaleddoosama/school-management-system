@@ -18,6 +18,6 @@ class CreateGradesTable extends Migration {
 
 	public function down()
 	{
-		Schema::drop('Grades');
+		Schema::drop('grades');
 	}
 }
