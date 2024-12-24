@@ -12,7 +12,7 @@ class Grade extends Model
     public $translatable  = ['Name'];
 
     protected $fillable=['Name','Notes'];
-    protected $table = 'Grades';
+    protected $table = 'grades';
     public $timestamps = true;
 
     public function Section()
