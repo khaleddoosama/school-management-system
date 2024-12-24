@@ -25,9 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Log::info('X-Forwarded-Proto: ' . request()->header('x-forwarded-proto'));
-        Log::info('app environment: ' . $this->app->environment());
-        if ($this->app->environment('production')) {
+        if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
     }
