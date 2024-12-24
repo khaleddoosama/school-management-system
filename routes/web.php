@@ -28,7 +28,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
 
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
 });
-
+ 
 //==============================Translate all pages============================
 Route::group(
     [
@@ -116,4 +116,3 @@ Route::group(
         Route::resource('settings', 'App\Http\Controllers\SettingController');
     }
 );
-
