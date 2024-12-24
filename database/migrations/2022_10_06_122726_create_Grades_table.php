@@ -7,7 +7,7 @@ class CreateGradesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('Grades', function(Blueprint $table) {
+		Schema::create('grades', function(Blueprint $table) {
 			$table->id();
 			$table->timestamps();
 			$table->string('Name')->unique();
